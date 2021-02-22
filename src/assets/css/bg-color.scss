@@ -1,0 +1,59 @@
+// 背景颜色规范(主要)
+$background-color-theme: #d43c33;//背景主题颜色默认(网易红)
+$background-color-theme1: rgba(34,213,156,1);//背景主题颜色1(QQ绿)
+$background-color-theme2: #333;//背景主题颜色2(夜间模式)
+
+@mixin bgColor(){
+  background: $background-color-theme;
+  [data-bg=theme1] & {background: $background-color-theme1}
+  [data-bg=theme2] & {background: $background-color-theme2}
+}
+@mixin bgUrl($url){
+  [data-bg=theme] & {background-image: url($url + "163.png")}
+  [data-bg=theme1] & {background-image: url($url + "qq.png")}
+  [data-bg=theme2] & {background-image: url($url + "it666.png")}
+  background-size: cover;
+  background-repeat: no-repeat;
+  [data-bg=theme][data-size="2"] & {background-image: url($url + "163@2x.png")}
+  [data-bg=theme][data-size="3"] & {background-image: url($url + "163@3x.png")}
+  [data-bg=theme1][data-size="2"] & {background-image: url($url + "qq@2x.png")}
+  [data-bg=theme1][data-size="3"] & {background-image: url($url + "qq@3x.png")}
+  [data-bg=theme2][data-size="2"] & {background-image: url($url + "it666@2x.png")}
+  [data-bg=theme2][data-size="3"] & {background-image: url($url + "it666@3x.png")}
+}
+@mixin tableBgColor(){
+  background: #ccc;
+  [data-bg=theme2] & {background: $background-color-theme2;color: #fff;}
+}
+@mixin routerActive(){
+  color: $background-color-theme;
+  [data-bg=theme1] & {color: $background-color-theme1}
+  [data-bg=theme2] & {color: yellow}
+}
+@mixin borderColor(){
+  border-bottom-color: $background-color-theme;
+  [data-bg=theme1] & {border-bottom-color: $background-color-theme1}
+  [data-bg=theme2] & {border-bottom-color: yellow}
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+}
+@mixin fontColor(){
+  [data-bg=theme2] & {color: #FFFFFF}
+}
+
+@mixin bgColor1(){
+  background: #f5f5f5;
+  [data-bg=theme2] & {background: $background-color-theme2}
+}
+@mixin bgColor2(){
+  background: #c9c9c94a;
+  [data-bg=theme2] & {background: $background-color-theme2}
+}
+@mixin titleColor(){
+  background: #000;
+  [data-bg=theme2] & {color: #FFFFFF}
+}
+@mixin bgColor3(){
+  background: #ccc;
+  [data-bg=theme2] & {background: $background-color-theme2}
+}

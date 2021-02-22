@@ -1,0 +1,27 @@
+$max-fs:17Px;
+$min-fs:12Px;
+$middule-fs:15Px;
+$minx-fs:13Px;
+
+//设置字体变化混合
+@mixin data-size($fs){
+  font-size: $fs;
+  [data-size="2"] & {font-size:$fs*2}
+  [data-size="3"] & {font-size:$fs*3}
+}
+
+// 不换行
+@mixin no-wrap(){
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+// 限制行数
+@mixin clamp($row){
+  overflow:hidden;
+  text-overflow:ellipsis;
+  //不规范属性 webkit-box另一种布局方式
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:$row;
+}

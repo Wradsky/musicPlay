@@ -1,0 +1,13 @@
+@import "bg-color";
+@import "clear-config";
+@import "font-size";
+html,body{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  touch-action: none;
+}
+body{
+  @include data-size($middule-fs);
+  touch-action: pan-y;
+}
